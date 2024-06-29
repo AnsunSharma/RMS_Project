@@ -1,0 +1,164 @@
+{
+	"info": {
+		"_postman_id": "79166d8d-da9c-4944-9a5b-d02005d76fff",
+		"name": "RMS_PROJECT",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24647138"
+	},
+	"item": [
+		{
+			"name": "user_create",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/octet-stream",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "api-key",
+						"value": "gNiXyflsFu3WNYCz1ZCxdWDb7oQg1Nl1",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Name\":\"Diya Pasu\",\r\n    \"Password\":\"Ansun@123\",\r\n    \"Email\":\"ansunsharma@gmail.com\",\r\n    \"UserType\":\"Applicant\",\r\n    \"Address\":\"Kuchinda\",\r\n    \"ProfileHeadline\":\"Software dev\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Email\":\"ansunsharma@gmail.com\",\r\n    \"Password\":\"Ansun@123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create_job",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJlbWFpbCI6ImFuc3Vuc2hhcm1hQGdtYWlsLmNvbSIsImV4cCI6MTcxOTkzNDU5OCwidXNlcl90eXBlIjoiQXBwbGljYW50In0.Dmex1ROhtrEy7H0JjVMMKNwvt24ioDQ8t-Vug_9h0iI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Title\": \"software dev\",\r\n    \"CreatorName\":\"Diya Pasu\" \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/admin/job",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"admin",
+						"job"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get jobs",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJlbWFpbCI6ImFuc3Vuc2hhcm1hQGdtYWlsLmNvbSIsImV4cCI6MTcxOTkzNDU5OCwidXNlcl90eXBlIjoiQXBwbGljYW50In0.Dmex1ROhtrEy7H0JjVMMKNwvt24ioDQ8t-Vug_9h0iI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/admin/job/:job_id?role_id=66802974406280f49d9ccd56",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"admin",
+						"job",
+						":job_id"
+					],
+					"query": [
+						{
+							"key": "role_id",
+							"value": "66802974406280f49d9ccd56"
+						}
+					],
+					"variable": [
+						{
+							"key": "job_id",
+							"value": "66802843406280f49d9ccd54"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
